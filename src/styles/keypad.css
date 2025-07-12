@@ -1,0 +1,10 @@
+.keypad {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.dividing-line {
+	border: 1px solid #656565;
+	width: 100%;
+}

@@ -1,0 +1,45 @@
+.numeric-keypad {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	gap: 8px;
+	justify-items: center;
+}
+
+.numeric-keypad__btn {
+	border-radius: 100%;
+	border: none;
+	aspect-ratio: 1/1;
+	cursor: pointer;
+	padding: 0;
+	width: 100%;
+	max-width: 60px;
+	background: #adfff00d;
+	font-size: 23px;
+	color: #f9f9f9;
+}
+
+.numeric-keypad > .numeric-keypad__btn:last-child {
+	background: #06dfb6;
+	color: #202020;
+}
+
+.numeric-keypad > .numeric-keypad__btn:first-child {
+	color: #ff4d4d;
+}
+
+.numeric-keypad > .numeric-keypad__btn:nth-child(4) {
+	background: #00ddb529;
+}
+
+.numeric-keypad > .numeric-keypad__btn:nth-child(8) {
+	background-color: #00ddb529;
+}
+
+.numeric-keypad > .numeric-keypad__btn:nth-child(12) {
+	background-color: #00ddb529;
+}
+
+.numeric-keypad > .numeric-keypad__btn:nth-child(16) {
+	background-color: #00ddb529;
+}
