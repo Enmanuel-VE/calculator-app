@@ -24,9 +24,15 @@
 				<section class="calculator-container">
 					<header class="screen">
 						<div class="screen__operation">
-							<input type="text" placeholder="969 x 23" />
+							<input
+								id="operations-value"
+								type="text"
+								placeholder="000.00"
+							/>
 						</div>
-						<div class="screen__result">22,287</div>
+						<p id="operation-result" class="screen__result">
+							22,287
+						</p>
 					</header>
 
 					<div class="keypad">
@@ -76,7 +82,10 @@
 									</svg>
 								</button>
 							</div>
-							<button class="options__delete-button">
+							<button
+								id="key-delete"
+								class="options__delete-button"
+							>
 								<svg
 									viewBox="0 0 30 25"
 									fill="none"

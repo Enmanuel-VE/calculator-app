@@ -1,31 +1,41 @@
-const numbers = [
-	"key-zero",
-	"key-one",
-	"key-two",
-	"key-three",
-	"key-four",
-	"key-five",
-	"key-six",
-	"key-seven",
-	"key-eight",
-	"key-nine",
-];
+const digits = {
+	0: document.getElementById("key-zero"),
+	1: document.getElementById("key-one"),
+	2: document.getElementById("key-two"),
+	3: document.getElementById("key-three"),
+	4: document.getElementById("key-four"),
+	5: document.getElementById("key-five"),
+	6: document.getElementById("key-six"),
+	7: document.getElementById("key-seven"),
+	8: document.getElementById("key-eight"),
+	9: document.getElementById("key-nine"),
+};
 
-const operators = [
-	"key-plus",
-	"key-subtract",
-	"key-multiply",
-	"key-divide",
-	"key-percent",
-];
+const modifiers = {
+	"+/-": document.getElementById("key-toggle-sign"),
+	".": document.getElementById("key-decimal"),
+};
 
-const modifiers = ["key-toggle-sign", "key-decimal"];
-const control = ["key-clear-all", "key-equals"];
+const operators = {
+	"+": document.getElementById("key-plus"),
+	"-": document.getElementById("key-subtract"),
+	"*": document.getElementById("key-multiply"),
+	"/": document.getElementById("key-divide"),
+	"%": document.getElementById("key-percent"),
+};
+
+const control = {
+	clearAll: document.getElementById("key-clear-all"),
+	equals: document.getElementById("key-equals"),
+	delete: document.getElementById("key-delete"),
+};
+
+const grouping = { "()": document.getElementById("key-paren") };
 
 export const symbolMap = {
-	digits: numbers.map((id) => document.getElementById(id)),
-	operators: operators.map((id) => document.getElementById(id)),
-	modifiers: modifiers.map((id) => document.getElementById(id)),
-	control: control.map((id) => document.getElementById(id)),
-	grouping: document.getElementById("key-paren"),
+	digits,
+	operators,
+	modifiers,
+	control,
+	grouping,
 };
