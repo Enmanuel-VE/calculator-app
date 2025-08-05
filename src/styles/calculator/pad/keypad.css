@@ -1,0 +1,150 @@
+.keypad {
+	--color-accent-primary: #00ddb5;
+	--color-text-base: #f9f9f9;
+	--color-warning: #ff4d4d;
+}
+
+.keypad {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	place-items: center;
+
+	gap: 1rem;
+
+	grid-template-areas:
+		"key-clear       key-parents key-percentage key-divide"
+		"key-7           key-8       key-9          key-multiply"
+		"key-4           key-5       key-6          key-subtract"
+		"key-1           key-2       key-3          key-add"
+		"key-change-sign key-0       key-decimal    key-equals";
+}
+
+/* Keypad buttons */
+.keypad__button {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	padding: 0;
+
+	font-size: clamp(0.5rem, 1rem, 1.5rem);
+	font-family: "Inter", sans-serif;
+	color: var(--color-text-base);
+
+	background-color: #adfff00d;
+
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	border: none;
+
+	cursor: pointer;
+}
+
+/* Numeric keypad */
+
+.keypad button[data-key="key-NINE"] {
+	grid-area: key-9;
+}
+
+.keypad button[data-key="key-EIGHT"] {
+	grid-area: key-8;
+}
+
+.keypad button[data-key="key-SEVEN"] {
+	grid-area: key-7;
+}
+
+.keypad button[data-key="key-SIX"] {
+	grid-area: key-6;
+}
+
+.keypad button[data-key="key-FIVE"] {
+	grid-area: key-5;
+}
+
+.keypad button[data-key="key-FOUR"] {
+	grid-area: key-4;
+}
+
+.keypad button[data-key="key-THREE"] {
+	grid-area: key-3;
+}
+
+.keypad button[data-key="key-TWO"] {
+	grid-area: key-2;
+}
+
+.keypad button[data-key="key-ONE"] {
+	grid-area: key-1;
+}
+
+.keypad button[data-key="key-ZERO"] {
+	grid-area: key-0;
+}
+
+/* Operators buttons */
+
+.keypad button[data-key="key-DIVIDE"] {
+	grid-area: key-divide;
+
+	background-color: #00ddb529;
+	color: var(--color-accent-primary);
+}
+
+.keypad button[data-key="key-MULTIPLY"] {
+	grid-area: key-multiply;
+
+	background-color: #00ddb529;
+	color: var(--color-accent-primary);
+}
+
+.keypad button[data-key="key-SUBTRACT"] {
+	grid-area: key-subtract;
+
+	background-color: #00ddb529;
+	color: var(--color-accent-primary);
+}
+.keypad button[data-key="key-ADD"] {
+	grid-area: key-add;
+
+	background-color: #00ddb529;
+	color: var(--color-accent-primary);
+}
+
+.keypad button[data-key="key-PERCENTAGE"] {
+	grid-area: key-percentage;
+}
+
+/* Control buttons */
+
+.keypad button[data-key="key-EQUALS"] {
+	grid-area: key-equals;
+
+	background-color: #06dfb6;
+	color: #202020;
+}
+
+.keypad button[data-key="key-CLEAR_ALL"] {
+	grid-area: key-clear;
+
+	color: var(--color-warning);
+}
+
+/* Parentheses buttons */
+
+.keypad button[data-key="key-PARENTS"] {
+	grid-area: key-parents;
+}
+
+/* Modifiers buttons */
+
+.keypad button[data-key="key-DECIMAL"] {
+	grid-area: key-decimal;
+}
+
+.keypad button[data-key="key-CHANGE_SIGN"] {
+	grid-area: key-change-sign;
+}

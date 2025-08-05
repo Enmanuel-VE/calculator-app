@@ -1,0 +1,23 @@
+.utility-menu {
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* Buttons */
+.utility-menu button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+.utility-menu__options-nav {
+	display: flex;
+	flex-direction: row;
+
+	gap: 2rem;
+}

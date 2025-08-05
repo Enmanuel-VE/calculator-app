@@ -1,0 +1,8 @@
+.display__result {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+
+	font-size: 2rem;
+	color: #00ddb5;
+}
