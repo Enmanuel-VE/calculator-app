@@ -7,6 +7,7 @@ const equalButton = Button({
 	children: "=",
 	className: "keypad__button",
 });
+
 const clearButton = Button({
 	value: "C",
 	dataKey: "CLEAR_ALL",
@@ -15,20 +16,19 @@ const clearButton = Button({
 });
 
 const inputsControls = () => {
-	equalButton.addEventListener("click", () => {
-		const displayResult = document.querySelector(".display__result");
+	const displayResult = () => document.querySelector(".display__result");
 
-		displayResult.textContent = userInputState.eval();
+	equalButton.addEventListener("click", () => {
+		displayResult().textContent = userInputState.eval();
 	});
 
 	clearButton.addEventListener("click", () => {
-		const displayResult = document.querySelector(".display__result");
 		const displayOperation = document.querySelector(".display__operation");
 
 		userInputState.clear();
 
 		displayOperation.textContent = userInputState.get();
-		displayResult.textContent = userInputState.get();
+		displayResult().textContent = userInputState.get();
 	});
 
 	return [equalButton, clearButton];

@@ -1,5 +1,8 @@
+const displayOperation = () => document.querySelector(".display__operation");
+const defaultValue = "";
+
 class MutableStore {
-	constructor(initialValue = "") {
+	constructor(initialValue = defaultValue) {
 		this.value = initialValue;
 	}
 
@@ -7,24 +10,25 @@ class MutableStore {
 		return this.value;
 	}
 
-	del() {
-		this.value = this.value.slice(0, -1);
-	}
-
-	clear() {
-		this.value = "";
-	}
-
 	set(value) {
 		this.value = value;
 	}
 
+	del() {
+		this.set(this.get().slice(0, -1));
+	}
+
+	clear() {
+		this.set(defaultValue);
+	}
+
 	push(value) {
-		this.value += value;
+		this.set(this.get() + value);
+		displayOperation().textContent = this.get();
 	}
 
 	eval() {
-		return eval(this.value);
+		return eval(this.get());
 	}
 }
 

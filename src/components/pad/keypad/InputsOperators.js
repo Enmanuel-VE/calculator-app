@@ -19,13 +19,7 @@ export const INPUTS_OPERATORS = Object.entries(INPUTS_OPERATORS_MAP).map(
 		});
 
 		btn.addEventListener(`click`, () => {
-			const displayOperation = document.querySelector(
-				".display__operation"
-			);
-
 			userInputState.push(value);
-			displayOperation.textContent = userInputState.get();
-			console.log("userInputState: ", userInputState.get());
 		});
 		return btn;
 	}

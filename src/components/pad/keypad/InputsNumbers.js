@@ -23,13 +23,7 @@ export const INPUTS_NUMBERS = Object.entries(INPUTS_NUMBERS_MAP).map(
 			className: `keypad__button`,
 		});
 		btn.addEventListener(`click`, () => {
-			const displayOperation = document.querySelector(
-				".display__operation"
-			);
-
 			userInputState.push(value);
-			displayOperation.textContent = userInputState.get();
-			console.log("userInputState: ", userInputState.get());
 		});
 		return btn;
 	}

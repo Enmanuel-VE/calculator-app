@@ -2,8 +2,8 @@ import "../../../styles/calculator/pad/keypad.css";
 import { INPUTS_NUMBERS } from "./InputsNumbers";
 import { INPUTS_OPERATORS } from "./InputsOperators";
 import { INPUTS_CONTROLS } from "./InputsControls";
-import { INPUT_PARENTS } from "./InputParents";
 import { INPUTS_MODIFIERS } from "./InputsModifiers";
+import InputParents from "./InputParents";
 
 export const Keypad = () => {
 	const keypad = document.createElement(`div`);
@@ -13,7 +13,7 @@ export const Keypad = () => {
 		...INPUTS_NUMBERS,
 		...INPUTS_OPERATORS,
 		...INPUTS_CONTROLS,
-		...INPUT_PARENTS,
+		InputParents,
 		...INPUTS_MODIFIERS
 	);
 	return keypad;

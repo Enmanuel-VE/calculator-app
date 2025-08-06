@@ -17,7 +17,6 @@ export const INPUTS_MODIFIERS = Object.entries(INPUTS_MODIFIERS_MAP).map(
 
 		btn.addEventListener(`click`, () => {
 			userInputState.push(value);
-			console.log(userInputState.get());
 		});
 		return btn;
 	}
