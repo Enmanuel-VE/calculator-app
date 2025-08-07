@@ -13,10 +13,6 @@ const InputDecimal = () => {
 		const currentOperation = userInputState.get();
 		const lastChar = currentOperation[currentOperation.length - 1];
 
-		console.log(`Current operation: ${currentOperation}`);
-		console.log(`Last character: ${lastChar}`);
-
-		if (currentOperation === "") return;
 		if (lastChar === ".") return;
 
 		userInputState.push(btn.value);

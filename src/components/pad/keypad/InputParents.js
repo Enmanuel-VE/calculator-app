@@ -15,7 +15,7 @@ const InputParents = () => {
 	});
 
 	btn.addEventListener("click", () => {
-		const value = btn.value; // "(" OR ")"
+		const value = btn.value;
 		const isParenthesisOpen = value === PARENTS.OPEN;
 
 		switch (isParenthesisOpen) {

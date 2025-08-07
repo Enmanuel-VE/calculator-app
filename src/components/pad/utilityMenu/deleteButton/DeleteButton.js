@@ -12,7 +12,7 @@ export const DeleteButton = () => {
 		const displayOperation = document.querySelector(".display__operation");
 		userInputState.del();
 		console.log("userInputState: ", userInputState.get());
-		displayOperation.textContent = userInputState.get();
+		displayOperation.value = userInputState.get();
 	});
 	return deleteButton;
 };

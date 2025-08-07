@@ -1,8 +1,10 @@
 import "../../../styles/calculator/display/operation.css";
-import { userInputState } from "../../../logic/state/userInputState.js";
 
 export const Operation = () => {
-	const operation = document.createElement("div");
+	const operation = document.createElement("input");
+	operation.type = "text";
+	operation.readOnly = true;
+	operation.placeholder = "000";
 	operation.classList.add(`display__operation`);
 	return operation;
 };

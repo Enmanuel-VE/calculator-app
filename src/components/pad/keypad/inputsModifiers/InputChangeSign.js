@@ -18,7 +18,7 @@ const changeSign = () => {
 			break;
 	}
 
-	DISPLAY.operation().textContent = userInputState.get();
+	DISPLAY.operation().value = userInputState.get();
 };
 
 const InputChangeSign = () => {

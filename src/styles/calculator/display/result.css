@@ -1,8 +1,11 @@
 .display__result {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
+	text-align: end;
 
-	font-size: 2rem;
+	font-size: 2lh;
+	background: transparent;
+	outline: none;
+	border: none;
 	color: #00ddb5;
+
+	mask-image: linear-gradient(to left, black 80%, transparent 100%);
 }

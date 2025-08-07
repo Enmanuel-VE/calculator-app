@@ -40,21 +40,27 @@ class MutableStore {
 
 	clear() {
 		this.set(defaultValue);
-		DISPLAY.operation().textContent = this.get();
-		DISPLAY.result().textContent = this.get();
+		DISPLAY.operation().value = this.get();
+		DISPLAY.result().value = this.get();
 	}
 
 	push(value) {
 		this.set(this.get() + value);
-		DISPLAY.operation().textContent = this.get();
+		DISPLAY.operation().value = this.get();
 	}
 
 	eval() {
-		const currentValue = this.get().trim();
-		if (currentValue === defaultValue) return defaultValue;
+		const currentValue = this.get();
+
+		if (currentValue === defaultValue) {
+			DISPLAY.result().value = defaultValue;
+			return defaultValue;
+		}
 
 		const result = safeEval(currentValue);
-		DISPLAY.result().textContent = result;
+		DISPLAY.result().value = result;
+
+		console.log(result);
 
 		return result;
 	}
