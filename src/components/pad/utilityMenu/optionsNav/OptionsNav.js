@@ -11,17 +11,19 @@ const OPTIONS_MAP = {
 };
 
 const OPTIONS_BUTTONS = Object.entries(OPTIONS_MAP).map(([key, value]) => {
-	const BUTTON = document.createElement("button");
+	const btn = document.createElement("a");
 
-	BUTTON.type = "button";
-	BUTTON.classList.add("options-nav__button");
-	BUTTON.id = `${key}-option`;
-	BUTTON.append(value);
+	btn.classList.add("options-nav__button");
 
-	BUTTON.addEventListener("click", () => {
+	btn.id = `${key}-option`;
+	btn.href = `${import.meta.env.BASE_URL}${key}`;
+	btn.dataset.link = "";
+	btn.append(value);
+
+	btn.addEventListener("click", () => {
 		console.log(`Haz clickeado: ${key}`);
 	});
-	return BUTTON;
+	return btn;
 });
 
 export const OptionsNav = () => {
