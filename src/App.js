@@ -2,12 +2,19 @@ import { AppRouter } from "./AppRouter";
 
 const App = async () => {
 	const ROOT = document.getElementById("root");
-	ROOT.innerHTML = "";
 
-	const path = window.location.pathname;
-	const page = await AppRouter(path);
+	ROOT.classList.add("fade-out");
 
-	ROOT.append(page());
+	setTimeout(async () => {
+		const path = window.location.pathname;
+		const page = await AppRouter(path);
+
+		ROOT.innerHTML = "";
+		ROOT.append(page());
+
+		ROOT.classList.remove("fade-out");
+		ROOT.classList.add("fade-in");
+	}, 200);
 };
 
 export { App };

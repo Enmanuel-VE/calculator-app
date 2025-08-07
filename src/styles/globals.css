@@ -6,3 +6,14 @@ body div#root section.calculator {
 	font-weight: 400;
 	font-optical-sizing: auto;
 }
+
+body div#root {
+	transition: opacity 0.2s ease;
+}
+
+.fade-out {
+	opacity: 0;
+}
+.fade-in {
+	opacity: 1;
+}
