@@ -1,7 +1,10 @@
 import formatCalculationInput from "../formatCalculationInput";
-
-const displayOperation = () => document.querySelector(".display__operation");
 const defaultValue = "";
+
+const DISPLAY = {
+	operation: () => document.querySelector(".display__operation"),
+	result: () => document.querySelector(".display__result"),
+};
 
 const safeEval = (operation) => {
 	try {
@@ -37,19 +40,24 @@ class MutableStore {
 
 	clear() {
 		this.set(defaultValue);
+		DISPLAY.operation().textContent = this.get();
+		DISPLAY.result().textContent = this.get();
 	}
 
 	push(value) {
 		this.set(this.get() + value);
-		displayOperation().textContent = this.get();
+		DISPLAY.operation().textContent = this.get();
 	}
 
 	eval() {
-		const input = this.get().trim();
-		if (input === defaultValue) return defaultValue;
+		const currentValue = this.get().trim();
+		if (currentValue === defaultValue) return defaultValue;
 
-		return safeEval(input);
+		const result = safeEval(currentValue);
+		DISPLAY.result().textContent = result;
+
+		return result;
 	}
 }
 
-export const userInputState = new MutableStore("");
+export const userInputState = new MutableStore();

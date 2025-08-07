@@ -16,20 +16,8 @@ const clearButton = Button({
 });
 
 const inputsControls = () => {
-	const displayResult = () => document.querySelector(".display__result");
-
-	equalButton.addEventListener("click", () => {
-		displayResult().textContent = userInputState.eval();
-	});
-
-	clearButton.addEventListener("click", () => {
-		const displayOperation = document.querySelector(".display__operation");
-
-		userInputState.clear();
-
-		displayOperation.textContent = userInputState.get();
-		displayResult().textContent = userInputState.get();
-	});
+	equalButton.addEventListener("click", () => userInputState.eval());
+	clearButton.addEventListener("click", () => userInputState.clear());
 
 	return [equalButton, clearButton];
 };
