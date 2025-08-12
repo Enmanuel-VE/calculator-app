@@ -18,9 +18,8 @@ export const INPUTS_OPERATORS = Object.entries(INPUTS_OPERATORS_MAP).map(
 			className: `keypad__button`,
 		});
 
-		btn.addEventListener(`click`, () => {
-			userInputState.push(value);
-		});
+		btn.addEventListener(`click`, () => userInputState.push(value));
+
 		return btn;
 	}
 );

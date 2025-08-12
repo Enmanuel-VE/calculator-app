@@ -22,9 +22,9 @@ export const INPUTS_NUMBERS = Object.entries(INPUTS_NUMBERS_MAP).map(
 			children: value,
 			className: `keypad__button`,
 		});
-		btn.addEventListener(`click`, () => {
-			userInputState.push(value);
-		});
+
+		btn.addEventListener(`click`, () => userInputState.push(value));
+
 		return btn;
 	}
 );

@@ -1,7 +1,5 @@
 const BASE_URL = import.meta.env.BASE_URL;
 
-console.log(BASE_URL);
-
 const routes = {
 	[BASE_URL]: () => import("./pages/HomePage.js"),
 	[`${BASE_URL}history`]: () => import("./pages/HistoryPage.js"),

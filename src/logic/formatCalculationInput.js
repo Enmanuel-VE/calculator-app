@@ -1,30 +1,35 @@
-const formatCalculationInput = (input) => {
-	const normalizeSymbol = (str) => {
-		const result = str
-			.replace(/\+\-/g, "-")
-			.replace(/\-\+/g, "-")
-			.replace(/--/g, "+")
-			.replace(/\+\+/g, "+")
-			.replace(/\(\+/g, "(");
+const normalize = (str) => {
+	const result = str
+		.replace(/\+\-/g, "-")
+		.replace(/\-\+/g, "-")
+		.replace(/--/g, "+")
+		.replace(/\+\+/g, "+")
+		.replace(/\(\+/g, "(")
+		.replace(/(\d+)%/g, "($1/100)")
+		.replace(/\)\(/g, ")*(")
+		.replace(/(\d)(\()/g, "$1*(")
+		.replace(/(\))(\d)/g, ")*$2");
 
-		return result;
-	};
-
-	const insertMultiplication = {
-		byParentheses: (str) => str.replace(/\)\(/g, ")*("),
-		byNumberOpenParenthesis: (str) => str.replace(/(\d)(\()/g, "$1*("),
-		byNumberClosingParenthesis: (str) => str.replace(/(\))(\d)/g, ")*$2"),
-	};
-
-	const percentToDivision = (str) => str.replace(/(\d+)%/g, "($1/100)");
-
-	const userInputTransformation = [
-		percentToDivision,
-		...Object.values(insertMultiplication),
-		normalizeSymbol,
-	];
-
-	return userInputTransformation.reduce((acc, fn) => fn(acc), input);
+	return result;
 };
 
-export default formatCalculationInput;
+const sanitization = (input) => {
+	const inputNormalized = normalize(input);
+	const inputFormatSymbols = [`"`, ";", "`", "<", ">"];
+	const conditional =
+		/[a-zA-Z]/.test(inputNormalized) ||
+		inputFormatSymbols.some((n) => inputNormalized.includes(n));
+
+	if (conditional) return { ok: false, error: new Error("invalid format") };
+
+	return { ok: true, data: inputNormalized };
+};
+
+const formatInput = (input) => {
+	const formatInputProcess = sanitization(input);
+	if (!formatInputProcess.ok) return formatInputProcess;
+
+	return { ok: true, data: formatInputProcess.data };
+};
+
+export default formatInput;
