@@ -19,8 +19,8 @@
 		"key-change-sign key-0       key-decimal    key-equals";
 }
 
-/* Keypad buttons */
-.keypad__button {
+/* <--- Keypad buttons -----------------------------> */
+button.keypad__button {
 	display: flex;
 	flex-direction: column;
 
@@ -38,12 +38,23 @@
 
 	aspect-ratio: 1/1;
 	border-radius: 50%;
-	border: none;
+	border: solid 1px;
+	border-color: transparent;
 
 	cursor: pointer;
 }
 
-/* Numeric keypad */
+button.keypad__button:hover {
+	background-color: rgba(0, 221, 181, 0.125);
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
+button.keypad__button:active {
+	background: rgba(255, 255, 255, 0.4);
+	color: black;
+}
+
+/* <--- Numeric keypad -----------------------------> */
 
 .keypad button[data-key="key-NINE"] {
 	grid-area: key-9;
@@ -85,7 +96,7 @@
 	grid-area: key-0;
 }
 
-/* Operators buttons */
+/* <--- Operators buttons -----------------------------> */
 
 .keypad button[data-key="key-DIVIDE"] {
 	grid-area: key-divide;
@@ -118,7 +129,7 @@
 	grid-area: key-percentage;
 }
 
-/* Control buttons */
+/* <--- Control buttons -----------------------------> */
 
 .keypad button[data-key="key-EQUALS"] {
 	grid-area: key-equals;
@@ -133,13 +144,13 @@
 	color: var(--color-warning);
 }
 
-/* Parentheses buttons */
+/* <--- Parentheses buttons -----------------------------> */
 
 .keypad button[data-key="key-PARENTS"] {
 	grid-area: key-parents;
 }
 
-/* Modifiers buttons */
+/* <--- Modifiers buttons -----------------------------> */
 
 .keypad button[data-key="key-DECIMAL"] {
 	grid-area: key-decimal;

@@ -1,4 +1,4 @@
-.display__operation {
+input.display__operation {
 	text-align: end;
 
 	font-size: 2.5lh;
@@ -7,6 +7,24 @@
 	border: 0;
 	color: white;
 	user-select: none;
+}
 
+input.display__operation:hover {
+	font-size: 3lh;
+}
+
+input.display__operation:focus {
+	font-size: 3lh;
+}
+
+input.display__operation:focus::placeholder {
+	opacity: 25%;
+}
+
+input.operation-left-gradient-line {
 	mask-image: linear-gradient(to left, black 80%, transparent 100%);
+}
+
+input.operation-right-gradient-line {
+	mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }

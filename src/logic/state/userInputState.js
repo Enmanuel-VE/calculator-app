@@ -41,23 +41,31 @@ class Originator {
 	}
 
 	eval() {
-		if (this.get().trim() === "") {
+		const currentMemento = History.currentMemento();
+		const isCurrentOperation = this.get() === currentMemento?.operation;
+		const isOperatorEmpty = this.get().trim() === "";
+
+		if (isOperatorEmpty) {
 			DISPLAY.result().value = "";
 			DISPLAY.operation().value = "";
 			return;
 		}
-
-		const evaluateExpression = (expression) => {
-			try {
-				const output = new Function(`return ${expression}`)();
-				if (isNaN(output)) throw new Error("Is not a number");
-				return { ok: true, data: output };
-			} catch (error) {
-				return { ok: false, error };
-			}
-		};
+		if (isCurrentOperation) return;
 
 		try {
+			const evaluateExpression = (expression) => {
+				try {
+					const output = new Function(`return ${expression}`)();
+					const isResultValid = isNaN(output);
+
+					if (isResultValid) throw new Error("Is not a number");
+
+					return { ok: true, data: output };
+				} catch (error) {
+					return { ok: false, error };
+				}
+			};
+
 			const process = formatInput(this.get());
 			if (!process.ok) throw process.error;
 

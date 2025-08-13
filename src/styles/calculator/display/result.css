@@ -1,4 +1,4 @@
-.display__result {
+input.display__result {
 	text-align: end;
 
 	font-size: 2lh;
@@ -6,6 +6,17 @@
 	outline: none;
 	border: none;
 	color: #00ddb5;
+}
 
+input.display__result:hover {
+	font-size: 2.5lh;
+	cursor: pointer;
+}
+
+input.result-left-gradient-line {
 	mask-image: linear-gradient(to left, black 80%, transparent 100%);
+}
+
+input.result-right-gradient-line {
+	mask-image: linear-gradient(to right, black 80%, transparent 100%);
 }

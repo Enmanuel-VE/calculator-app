@@ -20,9 +20,7 @@ const OPTIONS_BUTTONS = Object.entries(OPTIONS_MAP).map(([key, value]) => {
 	btn.dataset.link = "";
 	btn.append(value);
 
-	btn.addEventListener("click", () => {
-		console.log(`Haz clickeado: ${key}`);
-	});
+	btn.addEventListener("click", () => {});
 	return btn;
 });
 

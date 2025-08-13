@@ -1,4 +1,9 @@
-.utility-menu {
+nav.utility-menu__options-nav {
+	display: flex;
+	flex-direction: row;
+}
+
+div.utility-menu {
 	box-sizing: border-box;
 
 	display: flex;
@@ -7,17 +12,22 @@
 	align-items: center;
 }
 
-/* Buttons */
-.utility-menu button {
+/* <--- Buttons ------------------------------> */
+button.utility-menu__delete-button {
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-	padding: 0;
+	padding: 0 0.5rem;
 }
 
-.utility-menu__options-nav {
-	display: flex;
-	flex-direction: row;
+a.options-nav__button {
+	padding: 0 0.5rem;
+}
 
-	gap: 2rem;
+button.utility-menu__delete-button:hover {
+	opacity: 0.5;
+}
+
+a.options-nav__button:hover {
+	opacity: 0.5;
 }

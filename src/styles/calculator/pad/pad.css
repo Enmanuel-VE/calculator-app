@@ -19,7 +19,9 @@
 
 .pad hr {
 	border: none;
-	height: 1px;
 	margin: 0;
+
+	height: 1px;
+	width: 100%;
 	background-color: #656565;
 }

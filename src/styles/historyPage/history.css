@@ -46,7 +46,7 @@ li.list-operations__item {
 
 li.list-operations__item:hover {
 	background: #00ddb520;
-	border: solid 1px;
+
 	border-color: rgba(255, 255, 255, 0.5);
 
 	cursor: pointer;
