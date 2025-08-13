@@ -50,6 +50,7 @@ class Originator {
 			DISPLAY.operation().value = "";
 			return;
 		}
+
 		if (isCurrentOperation) return;
 
 		try {
