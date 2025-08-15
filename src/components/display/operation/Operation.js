@@ -4,18 +4,14 @@ import "../../../styles/calculator/display/operation.css";
 const input = document.createElement("input");
 
 const handleScroll = () => {
-	if (input.scrollLeft !== 0) {
-		input.classList.add("operation-left-gradient-line");
-		input.classList.remove("operation-right-gradient-line");
-	} else {
-		input.classList.add("operation-right-gradient-line");
-		input.classList.remove("operation-left-gradient-line");
-	}
+	const isScrolled = input.scrollLeft !== 0;
+	input.classList.toggle("operation-left-gradient-line", isScrolled);
+	input.classList.toggle("operation-right-gradient-line", !isScrolled);
 };
 
 const handleKeyDown = () => {
-	const isEmptyElement = input.value !== "";
-	if (isEmptyElement) input.title = input.value;
+	const hasValue = input.value !== "";
+	if (hasValue) input.title = input.value;
 
 	const hasScroll = input.scrollWidth > input.clientWidth;
 
@@ -33,7 +29,8 @@ const onChange = (e) => {
 };
 
 export const Operation = () => {
-	if (History.currentMemento()) input.value = userInputState.get();
+	const hasHistory = History.currentMemento();
+	if (hasHistory) input.value = userInputState.get();
 
 	input.type = "text";
 	input.placeholder = "00.0";
