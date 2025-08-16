@@ -30,6 +30,8 @@ ul.section__list-operations {
 li.list-operations__item {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1rem;
 
 	border: solid 1px;
 	border-color: transparent;
@@ -48,13 +50,6 @@ li.list-operations__item:hover {
 	background: #00ddb520;
 
 	border-color: rgba(255, 255, 255, 0.5);
-
-	cursor: pointer;
-}
-
-li.list-operations__item:active {
-	background: rgba(255, 255, 255, 0.685);
-	color: black;
 }
 
 header.history-calculator__header {
@@ -64,7 +59,7 @@ header.history-calculator__header {
 	justify-content: space-between;
 }
 
-.header__body {
+div.header__body {
 	display: flex;
 	flex-direction: column;
 
@@ -80,4 +75,69 @@ a.return-button {
 
 a.return-button:hover {
 	color: rgba(249, 249, 249, 0.5);
+}
+
+div.item__group-result {
+	display: flex;
+	flex-direction: row;
+
+	gap: 1rem;
+}
+
+div.group-result__result {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+div.group-result__actions {
+	display: flex;
+	flex-direction: row;
+
+	flex-wrap: wrap;
+
+	border: solid 1px;
+	border-color: transparent;
+	border-radius: 4px;
+	background: #00ddb520;
+
+	border-radius: 1rem;
+	padding: 0.5rem;
+
+	justify-content: center;
+	align-items: center;
+}
+
+div.group-result__actions:hover {
+	border-color: rgba(255, 255, 255, 0.5);
+	background: #00ddb540;
+}
+
+button.actions__btn {
+	max-width: 2rem;
+
+	aspect-ratio: 1/1;
+	object-fit: contain;
+
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+button.actions__btn:hover {
+	opacity: 0.5;
+}
+
+img.copy-svg {
+	width: 100%;
+
+	object-fit: contain;
+	aspect-ratio: 1/1;
+}
+
+img.calculator-svg {
+	width: 100%;
+
+	object-fit: contain;
+	aspect-ratio: 1/1;
 }

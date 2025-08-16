@@ -3,6 +3,12 @@ import "../../../styles/calculator/display/result.css";
 
 const input = document.createElement("input");
 
+const handleScroll = () => {
+	const isScrolled = input.scrollLeft !== 0;
+	input.classList.toggle("result-left-gradient-line", isScrolled);
+	input.classList.toggle("result-right-gradient-line", !isScrolled);
+};
+
 export const Result = () => {
 	input.type = "text";
 	input.readOnly = true;
@@ -25,15 +31,7 @@ export const Result = () => {
 		navigator.clipboard.writeText(e.target.value);
 	});
 
-	input.addEventListener("scroll", () => {
-		if (input.scrollLeft !== 0) {
-			input.classList.add("result-left-gradient-line");
-			input.classList.remove("result-right-gradient-line");
-		} else {
-			input.classList.add("result-right-gradient-line");
-			input.classList.remove("result-left-gradient-line");
-		}
-	});
+	input.addEventListener("scroll", handleScroll);
 
 	return input;
 };

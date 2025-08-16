@@ -1,53 +1,9 @@
-import formatInput from "../formatCalculationInput";
 import { Caretaker, Memento } from "./Memento";
-
-function evaluateExpression(expression) {
-	try {
-		const output = new Function(`return ${expression}`)();
-		const isResultValid = isNaN(output);
-
-		if (isResultValid) throw new Error("Is not a number");
-
-		return { ok: true, data: output };
-	} catch (error) {
-		return { ok: false, error };
-	}
-}
+import formatInput from "../formatInput";
+import evalResult from "../evalResult";
+import display from "./display.js";
 
 const History = new Caretaker();
-
-const display = {
-	get operation() {
-		const inputOperation = document.querySelector(".display__operation");
-		return inputOperation;
-	},
-
-	get result() {
-		const inputResult = document.querySelector(".display__result");
-		return inputResult;
-	},
-
-	setOperation(value) {
-		display.operation.value = value;
-	},
-
-	setResult(value) {
-		display.result.value = value;
-	},
-
-	clear() {
-		this.setOperation("");
-		this.setResult("");
-	},
-
-	get hasOperation() {
-		return Boolean(this.operation.value.trim());
-	},
-
-	get hasResult() {
-		return Boolean(this.result.value.trim());
-	},
-};
 
 class Originator {
 	#state;
@@ -101,7 +57,7 @@ class Originator {
 			const process = formatInput(this.get());
 			if (!process.ok) throw process.error;
 
-			const output = evaluateExpression(process.data);
+			const output = evalResult(process.data);
 			if (!output.ok) throw output.error;
 
 			History.add(
@@ -110,9 +66,9 @@ class Originator {
 
 			display.setResult(output.data);
 			display.result.scrollLeft = 0;
-		} catch (e) {
-			console.error("Message:", e.message);
-			console.error("Stack:", e.stack);
+		} catch (error) {
+			console.error("Message:", error.message);
+			console.error("Stack:", error.stack);
 
 			display.setResult("Math error");
 		}

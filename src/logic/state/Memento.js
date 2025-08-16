@@ -46,6 +46,15 @@ class Caretaker {
 		return this.#history[this.#currentIndex];
 	}
 
+	changeCurrentMemento(index) {
+		const indexValidated = index >= 0 && index <= this.#history.length - 1;
+		if (!indexValidated) return null;
+
+		this.#currentIndex = index;
+
+		return this.#history[index];
+	}
+
 	currentMemento() {
 		if (this.#currentIndex === -1) return null;
 
