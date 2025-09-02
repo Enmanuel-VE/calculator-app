@@ -1,8 +1,9 @@
-const BASE_URL = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL;
 
 const routes = {
-	[BASE_URL]: () => import("./pages/HomePage.js"),
-	[`${BASE_URL}history`]: () => import("./pages/HistoryPage.js"),
+	[base]: () => import("./pages/HomePage.js"),
+	[`${base}history`]: () => import("./pages/HistoryPage.js"),
+	[`${base}conversionUnits`]: () => import("./pages/ConversionUnits.js"),
 };
 
 export const AppRouter = async (path) => {

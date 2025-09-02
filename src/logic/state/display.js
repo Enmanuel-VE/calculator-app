@@ -1,11 +1,16 @@
+import stylesResult from "../../styles/calculator/display/result.module.css";
+import stylesOperation from "../../styles/calculator/display/operation.module.css";
+
+const $ = (query) => document.querySelector(query);
+
 const display = {
 	get operation() {
-		const inputOperation = document.querySelector(".display__operation");
+		const inputOperation = $(`.${stylesOperation.display__operation}`);
 		return inputOperation;
 	},
 
 	get result() {
-		const inputResult = document.querySelector(".display__result");
+		const inputResult = $(`.${stylesResult.display__result}`);
 		return inputResult;
 	},
 

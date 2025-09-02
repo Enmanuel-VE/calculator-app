@@ -1,0 +1,50 @@
+header.header-body {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	padding: 2rem 1rem;
+
+	position: sticky;
+	top: 0;
+
+	background-color: rgb(37, 37, 37);
+}
+
+a.header-body__return-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	max-width: 2rem;
+	aspect-ratio: 1/1;
+
+	opacity: 0.5;
+}
+
+a.header-body__return-button:hover {
+	opacity: 1;
+}
+
+div.header-body__main-item {
+	display: flex;
+	flex-direction: column;
+}
+
+h1.main-item__title {
+	color: rgb(249, 249, 249);
+	cursor: default;
+
+	font-size: 1.5lh;
+	text-align: center;
+}
+
+p.main-item__description {
+	color: rgba(249, 249, 249, 0.5);
+	cursor: default;
+
+	font-size: 0.5;
+	text-align: center;
+}

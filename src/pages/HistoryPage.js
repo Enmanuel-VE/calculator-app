@@ -1,32 +1,12 @@
 import { History, userInputState } from "./../logic/state/userInputState";
+import Header from "../components/common/Header";
 import "../styles/globals.css";
-import "../styles/historyPage/history.css";
+import styles from "../styles/historyPage/history.module.css";
+
 import copySvg from "../../src/assets/images/copySvg.svg";
 import calculatorSVG from "../../src/assets/images/calculatorSVG.svg";
-import display from "../logic/state/display";
 
 const BASE_URL = import.meta.env.BASE_URL;
-
-const Header = () => {
-	const header = document.createElement("header");
-
-	header.innerHTML = /*html*/ `
-		<nav class="header__nav">
-			<a data-link class="return-button" href="${import.meta.env.BASE_URL}"> < </a>
-		</nav>
-
-		<div class="header__body">
-			<h1 class="header-title">History</h1>
-			<p class="header-description">This is the history page.</p>
-		</div>
-
-		<div class="header__aux-item"></div>
-	`.trim();
-
-	header.classList.add("history-calculator__header");
-
-	return header;
-};
 
 const btnCopyResult = (mementoIndex) => {
 	const btn = document.createElement("button");
@@ -34,9 +14,9 @@ const btnCopyResult = (mementoIndex) => {
 
 	img.src = copySvg;
 	img.alt = "copy svg";
-	img.classList.add("copy-svg");
+	img.classList.add(styles["copy-svg"]);
 
-	btn.classList.add("actions__btn");
+	btn.classList.add(styles["actions__btn"]);
 	btn.type = "button";
 	btn.append(img);
 
@@ -56,12 +36,12 @@ const btnReturnOperation = (mementoIndex) => {
 	const a = document.createElement("a");
 	const img = document.createElement("img");
 
-	btn.classList.add("actions__btn");
+	btn.classList.add(styles["actions__btn"]);
 	btn.type = "button";
 
 	img.src = calculatorSVG;
 	img.alt = "calculator svg";
-	img.classList.add("calculator-svg");
+	img.classList.add(styles["calculator-svg"]);
 
 	a.href = BASE_URL;
 	a.dataset.link = true;
@@ -88,16 +68,16 @@ const Section = () => {
 		const result = memento.get().result;
 
 		li.innerHTML = /*html*/ `
-			<div class="item__operation">${operation}</div>
-			<div class="item__group-result">
-				<div class="group-result__result">${result}</div>
-				<div class="group-result__actions"></div>
+			<div class="${styles["item__operation"]}">${operation}</div>
+			<div class="${styles["item__group-result"]}">
+				<div class="${styles["group-result__result"]}">${result}</div>
+				<div class="${styles["group-result__actions"]}"></div>
 			</div>
 		`.trim();
 
-		li.classList.add("list-operations__item");
+		li.classList.add(styles["list-operations__item"]);
 
-		li.querySelector(".group-result__actions").append(
+		li.querySelector(`.${styles["group-result__actions"]}`).append(
 			btnCopyResult(index),
 			btnReturnOperation(index)
 		);
@@ -111,8 +91,8 @@ const Section = () => {
 		ul.append(...contentLi);
 		section.append(ul);
 
-		ul.classList.add("section__list-operations");
-		section.classList.add("history-calculator__section");
+		ul.classList.add(styles["section__list-operations"]);
+		section.classList.add(styles["history-calculator__section"]);
 
 		return section;
 	}
@@ -123,13 +103,16 @@ const Section = () => {
 const HistoryPage = () => {
 	const historyPage = document.createElement("div");
 
-	if (Section()) {
-		historyPage.append(Header(), Section());
-	} else {
-		historyPage.append(Header());
-	}
+	historyPage.append(
+		Header({
+			title: "History",
+			description: "This is the history page.",
+		})
+	);
 
-	historyPage.classList.add("history-calculator");
+	if (Section()) historyPage.append(Section());
+
+	historyPage.classList.add(styles["history-calculator"]);
 	return historyPage;
 };
 

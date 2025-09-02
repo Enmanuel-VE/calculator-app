@@ -1,7 +1,5 @@
 div.history-calculator {
 	--color-text-base: #f9f9f9;
-
-	background: #252525;
 	min-height: 100vh;
 }
 
@@ -140,4 +138,34 @@ img.calculator-svg {
 
 	object-fit: contain;
 	aspect-ratio: 1/1;
+}
+
+nav.header__nav {
+	max-height: 2.5rem;
+
+	aspect-ratio: 1/1;
+	object-fit: contain;
+}
+
+img.back-arrow-svg {
+	width: 100%;
+
+	object-fit: contain;
+	aspect-ratio: 1/1;
+}
+
+div.item__operation {
+	cursor: pointer;
+}
+
+div.item__operation:hover {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+div.group-result__result {
+	cursor: pointer;
+}
+
+div.group-result__result:hover {
+	color: rgba(255, 255, 255, 0.5);
 }

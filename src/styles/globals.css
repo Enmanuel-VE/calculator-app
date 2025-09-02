@@ -15,3 +15,7 @@ div#root {
 	font-weight: 400;
 	font-optical-sizing: auto;
 }
+
+body {
+	background: #252525;
+}

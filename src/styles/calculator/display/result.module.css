@@ -1,7 +1,7 @@
 input.display__result {
 	text-align: end;
 
-	font-size: 2lh;
+	font-size: 1.5lh;
 	background: transparent;
 	outline: none;
 	border: none;
@@ -9,7 +9,7 @@ input.display__result {
 }
 
 input.display__result:hover {
-	font-size: 2.5lh;
+	font-size: 2lh;
 	cursor: pointer;
 }
 
