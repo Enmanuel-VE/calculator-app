@@ -1,4 +1,4 @@
-import{C as t}from"./ComingSoon-DfrXN7rt.js";const i=()=>{const e=document.createElement("div");return e.style=`
+import{C as t}from"./ComingSoon-DvfWCv2L.js";const i=()=>{const e=document.createElement("div");return e.style=`
         width: 100%;
         min-height: 100dvh;
         display: flex;
