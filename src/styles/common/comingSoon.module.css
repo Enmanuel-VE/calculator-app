@@ -39,12 +39,28 @@ img.footer__homeSVG {
 	opacity: 60%;
 }
 
+button.footer__return-btn {
+	box-sizing: border-box;
+
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: #adfff00d;
+	cursor: pointer;
+
+	border: 1px solid transparent;
+}
+
 /* <---- Hover zone ----> */
 
 h2.comingSoon__title:hover {
 	opacity: 80%;
 }
 
-img.footer__homeSVG:hover {
+button.footer__return-btn:hover img.footer__homeSVG {
 	opacity: 1;
+}
+
+button.footer__return-btn:hover {
+	background-color: rgba(0, 221, 181, 0.125);
+	border-color: rgba(255, 255, 255, 0.5);
 }

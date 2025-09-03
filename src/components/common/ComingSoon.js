@@ -15,7 +15,9 @@ const ComingSoonPage = () => {
 
         <footer class="${styles.comingSoon__footer}">
             <a data-link href="${BASE_URL}">
-                <img loading="lazy" title="Return to the basic calculator." class="${styles.footer__homeSVG}" src="${homeSVG}" alt="Back to home button.">
+                <button class="${styles["footer__return-btn"]}" type="button">
+                    <img loading="lazy" title="Return to the basic calculator." class="${styles.footer__homeSVG}" src="${homeSVG}" alt="Back to home button.">
+                </button>
             </a>
         </footer>
     `.trim();
