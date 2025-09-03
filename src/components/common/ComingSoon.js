@@ -15,8 +15,9 @@ const ComingSoonPage = () => {
 
         <footer class="${styles.comingSoon__footer}">
             <a data-link href="${BASE_URL}">
-                <button class="${styles["footer__return-btn"]}" type="button">
-                    <img loading="lazy" title="Return to the basic calculator." class="${styles.footer__homeSVG}" src="${homeSVG}" alt="Back to home button.">
+                <button title="Return to the basic calculator." class="${styles["footer__return-btn"]}" type="button">
+                    <p>Return to the basic calculator.</p>
+                    <img loading="lazy" class="${styles.footer__homeSVG}" src="${homeSVG}" alt="Back to home button.">
                 </button>
             </a>
         </footer>

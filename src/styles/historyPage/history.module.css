@@ -1,6 +1,31 @@
 div.history-calculator {
 	--color-text-base: #f9f9f9;
 	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+}
+
+section.history-calculator__section-empty {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+
+	color: #c5c5c5;
+}
+
+h1.title__historyEmpty {
+	max-width: 60dvw;
+	text-align: center;
+}
+p.description__historyEmpty {
+	max-width: 40dvw;
+	text-align: center;
 }
 
 header.history-calculator__header {

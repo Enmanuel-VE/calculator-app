@@ -95,6 +95,15 @@ const Section = () => {
 		section.classList.add(styles["history-calculator__section"]);
 
 		return section;
+	} else {
+		section.classList.add(styles["history-calculator__section-empty"]);
+
+		section.innerHTML = /*HTML*/ `
+		<h1 class="${styles.title__historyEmpty}">🥴 Oh dear, you haven't performed any operations that we can show you yet.</h1>
+		<p class="${styles.description__historyEmpty}">📰 Go back to the home page, do your calculations, and you'll be able to see the changes reflected in this section later. 🚀</p>
+		`.trim();
+
+		return section;
 	}
 
 	return null;

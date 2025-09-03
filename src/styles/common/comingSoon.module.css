@@ -32,6 +32,10 @@ footer.comingSoon__footer {
 	max-width: 60dvw;
 }
 
+footer.comingSoon__footer a {
+	text-decoration: none;
+}
+
 img.footer__homeSVG {
 	aspect-ratio: 1/1;
 	max-width: 2.5rem;
@@ -42,12 +46,30 @@ img.footer__homeSVG {
 button.footer__return-btn {
 	box-sizing: border-box;
 
-	aspect-ratio: 1/1;
-	border-radius: 50%;
-	background-color: #adfff00d;
-	cursor: pointer;
+	margin-top: 1.5rem;
 
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+
+	gap: 1rem;
+
+	padding: 0.5rem 1.5rem;
+	border-radius: 8px;
+
+	background-color: #1f433c;
 	border: 1px solid transparent;
+	color: white;
+
+	cursor: pointer;
+}
+
+button.footer__return-btn p {
+	opacity: 60%;
+}
+
+button.footer__return-btn:hover p {
+	opacity: 1;
 }
 
 /* <---- Hover zone ----> */
