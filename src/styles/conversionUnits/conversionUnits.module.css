@@ -8,4 +8,6 @@ div.conversion-units {
 
 section.body-conversion-units {
 	flex: 1;
+	display: grid;
+	place-items: center;
 }

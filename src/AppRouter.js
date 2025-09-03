@@ -4,6 +4,7 @@ const routes = {
 	[base]: () => import("./pages/HomePage.js"),
 	[`${base}history`]: () => import("./pages/HistoryPage.js"),
 	[`${base}conversionUnits`]: () => import("./pages/ConversionUnits.js"),
+	[`${base}scientificMode`]: () => import("./pages/ScientificMode.js"),
 };
 
 export const AppRouter = async (path) => {

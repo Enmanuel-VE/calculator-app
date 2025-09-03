@@ -1,10 +1,13 @@
 import "../styles/globals.css";
 import styles from "../styles/conversionUnits/conversionUnits.module.css";
 import Header from "../components/common/Header.js";
+import ComingSoon from "../components/common/ComingSoon.js";
 
 const Section = () => {
 	const section = document.createElement("section");
 	section.classList.add(styles["body-conversion-units"]);
+
+	section.append(ComingSoon());
 
 	return section;
 };

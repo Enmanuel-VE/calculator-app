@@ -1,0 +1,50 @@
+div.comingSoon {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	justify-content: center;
+	align-items: center;
+}
+
+h2.comingSoon__title {
+	text-align: center;
+	font-size: clamp(1lh, 5dvh, 2lh);
+	color: #fff;
+	cursor: default;
+
+	max-width: 60dvw;
+}
+
+p.comingSoon__description {
+	text-align: center;
+	font-size: clamp(0.5lh, 2.5dvh, 1lh);
+	color: #f3f3f3;
+
+	max-width: 60dvw;
+}
+
+footer.comingSoon__footer {
+	display: flex;
+	justify-content: center;
+	max-width: 60dvw;
+}
+
+img.footer__homeSVG {
+	aspect-ratio: 1/1;
+	max-width: 2.5rem;
+
+	opacity: 60%;
+}
+
+/* <---- Hover zone ----> */
+
+h2.comingSoon__title:hover {
+	opacity: 80%;
+}
+
+img.footer__homeSVG:hover {
+	opacity: 1;
+}

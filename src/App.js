@@ -7,6 +7,7 @@ const App = async () => {
 	const page = await AppRouter(path);
 
 	ROOT.innerHTML = "";
+
 	ROOT.append(page());
 };
 
