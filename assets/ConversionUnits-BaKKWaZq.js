@@ -1,1 +1,0 @@
-import"./index-CUL7uxS0.js";import{H as t}from"./Header-BYZKtYZm.js";function r(){const e=document.createElement("div"),n=t({title:"Conversion Units",description:"This is the conversion units page."});return e.append(n),e}export{r as default};
